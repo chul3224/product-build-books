@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="The Grimoire of Truth - 고대의 지혜와 디지털 기술이 만난 신비로운 운명의 서. 당신의 고민에 대한 해답과 통찰을 제공합니다. 무료 타로, 운세, 명상 가이드.">
     <title>The Grimoire of Truth</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1628808724635186" crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-1628808724635186">
@@ -17,26 +18,27 @@
             /* 기본 사이즈 (PC 기준) */
             --book-w: 350px;
             --book-h: 550px;
-            --shift-x: 175px; /* 펼쳤을 때 중앙 정렬을 위한 이동 거리 */
+            --shift-x: 175px;
         }
 
-        /* 모바일 환경 최적화 (600px 이하) */
+        /* 모바일 환경 최적화 */
         @media (max-width: 600px) {
             :root {
-                --book-w: 90vw; /* 화면 너비의 90% 사용 */
-                --book-h: 70vh; /* 화면 높이의 70% 사용 */
-                --shift-x: 0px;  /* 모바일은 옆으로 밀지 않고 제자리에서 열림 */
+                --book-w: 90vw;
+                --book-h: 70vh;
+                --shift-x: 0px;
             }
             .parchment-text { font-size: 1.2rem !important; }
             #final-answer { font-size: 2rem !important; }
+            .info-section { padding: 30px 20px !important; }
         }
 
         body, html {
-            margin: 0; padding: 0; width: 100%; height: 100%;
+            margin: 0; padding: 0; width: 100%; min-height: 100%;
             background-color: #050505;
-            display: flex; justify-content: center; align-items: center;
-            overflow: hidden; touch-action: manipulation;
+            overflow-x: hidden; /* 가로 스크롤 방지 */
             font-family: 'Crimson Pro', serif;
+            color: #f2e8c9;
         }
 
         .magic-background {
@@ -45,10 +47,12 @@
             z-index: -1;
         }
 
+        /* 첫 화면: 책이 있는 공간 (100vh 유지) */
         .scene {
             perspective: 2000px;
-            width: 100%; height: 100%;
+            width: 100%; height: 100vh;
             display: flex; justify-content: center; align-items: center;
+            position: relative;
         }
 
         .book {
@@ -60,7 +64,6 @@
             box-shadow: 0 30px 60px var(--shadow);
         }
 
-        /* 책이 열릴 때 핵심 로직 */
         .book.open {
             transform: translateX(var(--shift-x));
         }
@@ -149,6 +152,47 @@
             100% { background: transparent; opacity: 0; }
         }
         .flash { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 200; pointer-events: none; }
+
+        /* SEO 및 AdSense를 위한 콘텐츠 섹션 */
+        .info-section {
+            position: relative;
+            background: rgba(10, 5, 10, 0.95);
+            color: #dcdcdc;
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            border-top: 1px solid var(--gold);
+        }
+        
+        .info-section h1, .info-section h2 {
+            font-family: 'Uncial Antiqua', cursive;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #000;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+        }
+
+        footer a:hover { text-decoration: underline; }
+        footer .copyright { margin-top: 20px; color: #666; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -156,6 +200,7 @@
 <div class="magic-background"></div>
 <div class="flash" id="flash"></div>
 
+<!-- 메인 인터랙티브 영역 -->
 <div class="scene" id="main-scene">
     <div class="book" id="book" onclick="openBook()">
         <div class="cover" id="cover">
@@ -178,6 +223,47 @@
     <div id="final-answer"></div>
     <button class="retry-btn" onclick="location.reload()">다시 질문하기</button>
 </div>
+
+<!-- 콘텐츠 섹션 (SEO & AdSense) -->
+<section class="info-section">
+    <h1>The Grimoire of Truth: 당신의 운명을 비추는 거울</h1>
+    <p>
+        현대인의 삶은 수많은 선택의 연속입니다. 매 순간 마주하는 결정의 갈림길에서 우리는 종종 망설이고, 불안해하며, 누군가 확신을 주기를 바랍니다. 
+        'The Grimoire of Truth(진실의 서)'는 바로 그러한 순간을 위해 탄생한 디지털 오라클입니다. 고대의 신비주의적 전통과 현대적인 디지털 기술을 결합하여, 
+        당신의 무의식이 이끄는 해답을 화면 위로 길어 올립니다.
+    </p>
+    
+    <h2>디지털 타로와 마음챙김</h2>
+    <p>
+        이곳에서의 경험은 단순한 운세 뽑기가 아닙니다. 책을 펼치고, 질문을 떠올리고, 해답을 기다리는 일련의 과정은 짧은 명상(Mindfulness)과도 같습니다. 
+        화면에 집중하며 호흡을 가다듬는 동안, 복잡했던 마음은 차분해지고 스스로 무엇을 원하고 있었는지 깨닫게 됩니다. 
+        우리가 제공하는 메시지는 긍정적인 확언(Affirmation)을 기반으로 하여, 사용자가 스스로 내면의 힘을 믿고 나아갈 수 있도록 돕습니다.
+    </p>
+
+    <h2>어떻게 사용하나요?</h2>
+    <p>
+        사용법은 간단하지만, 마음가짐이 중요합니다.
+        첫째, 조용한 곳에서 마음을 가라앉히세요. 둘째, 당신을 괴롭히거나 궁금하게 만드는 구체적인 질문 하나를 마음속으로 깊이 생각하세요. 
+        셋째, 화면 속의 'Grimoire(마법서)'를 터치하여 펼치세요. 책장이 넘어가는 소리와 함께 당신의 운명이 기록된 페이지가 나타날 것입니다. 
+        나타난 문장은 우연처럼 보이지만, 심리학자 융(Jung)이 말한 동시성(Synchronicity)의 원리에 따라 지금 당신에게 가장 필요한 조언일 수 있습니다.
+    </p>
+    
+    <p>
+        오늘 하루, 불확실함 속에 갇혀 있다면 잠시 시간을 내어 진실의 서를 펼쳐보세요. 
+        당신이 찾던 답은 이미 당신 안에 있었음을 확인하게 될 것입니다.
+    </p>
+</section>
+
+<footer>
+    <div class="links">
+        <a href="index.html">홈 (Home)</a>
+        <a href="privacy.html">개인정보처리방침 (Privacy Policy)</a>
+        <a href="contact.html">제휴 및 문의 (Contact)</a>
+    </div>
+    <div class="copyright">
+        &copy; 2026 The Grimoire of Truth. All rights reserved.
+    </div>
+</footer>
 
 <script>
     const answers = [
