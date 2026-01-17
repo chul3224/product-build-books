@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /firebase-debug.log
 
-Sitemap: https://chul3224.github.io/product-build-books/sitemap.xml
+Sitemap: https://product-build-books.pages.dev/sitemap.xml
